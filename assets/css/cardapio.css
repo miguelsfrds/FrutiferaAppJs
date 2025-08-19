@@ -1,0 +1,22 @@
+.container{
+    margin-top: 20px;
+}
+.form{
+    width: 100%;
+    margin-bottom: 19px;
+}
+
+/*Melhorando a responsividade no mobile*/
+@media (max-width: 480px) {
+    /*Aumentando o tamanho do container e dando um espaçamento entre a navbar e a parte de busca*/
+  .container {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+  .modal-dialog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90%;
+  }
+}

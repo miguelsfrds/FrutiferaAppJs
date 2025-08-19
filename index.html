@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/dragon-fruit.png" type="image/x-icon">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> <!-- CSS do Bootstrap -->
+    <link rel="stylesheet" href="./assets/css/index.css"> <!-- CSS da página -->
+    <title>Raízes do Sertão</title>
+</head>
+
+<body>
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <!--Logo da Cafeteria-->
+                <img src="./assets/images/dragon-fruit.png" height="50px"><a class="navbar-brand"
+                    href="#">Raízes do Sertão</a></img>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Botões de Opções da Navbar-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!--Home-->
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true" href="#">Home</a>
+                        </li>
+                        <!--Cardápio-->
+                        <li class="nav-item">
+                            <a class= "nav-link active" aria-current="page" href="./cardapio.html">Cardápio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <!--Carrossel-->
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!--Primeira Imagem-->
+                    <div class="carousel-item active">
+                        <img src="./assets/images/image pé de pitaias.png" class="d-block w-100" alt="...">
+                    </div>
+                    <!--Segunda Imagem-->
+                    <div class="carousel-item">
+                        <img src="./assets/images/image pé de laranjas.png" class="d-block w-100" alt="...">
+                    </div>
+                    <!--Terceira Imagem-->
+                    <div class="carousel-item">
+                        <img src="./assets/images/image goiabas.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <!--Botões de avançar e retroceder-->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+        <p class="text-center text-body-secondary"><img src="./assets/images/dragon-fruit dark.png" height="30px" alt="">© 2025 Company, Inc</p>
+    </footer>
+
+    <!-- Scripts -->
+     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

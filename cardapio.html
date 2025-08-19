@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/grao de cafe.png" type="image/x-icon">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> <!-- CSS do Bootstrap -->
+    <link rel="stylesheet" href="./node_modules/toastify-js/src/toastify.css"> <!-- CSS no Toastify -->
+    <link rel="stylesheet" href="./assets/css/cardapio.css"> <!-- CSS da página -->
+    <title>Cardápio Calmoa</title>
+</head>
+
+<body>
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <!--Logo da Cafeteria-->
+                <img src="./assets/images/dragon-fruit.png" height="50px"><a class="navbar-brand"
+                    href="#">Raízes do Sertão</a></img>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Botões de Opções da Navbar-->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!--Home-->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                        </li>
+                        <!--Cardápio-->
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true"  href="./cardapio.html">Cardápio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Opção de busca -->
+            <form class="form">
+                <label for="buscarInput" class="form-label">Buscar</label>
+                <!--Display Flex com espaçamento entre os elementos de gap-2(8px)-->
+                <div class="d-flex gap-2 ">
+                    <input type="text" class="form-control w-100" id="buscarInput" placeholder="Digite algo...">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#botaoModal">+</button>
+                </div>
+            </form>
+            <!-- Modal -->
+            <div class="modal fade" id="botaoModal" tabindex="-1" aria-labelledby="botaoModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5">Cardápio - Adicionar Item</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formCardapio">
+                                <div class="mb-3">
+                                    <label for="preco" class="form-label">Nome da espécie</label>
+                                    <input type="text" class="form-control" id="nomeEspecie" name="nomeEspecie" placeholder="(popular)">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descricao" class="form-label">Nome científico</label>
+                                    <input type="text" class="form-control" id="nomeCientifico" name="nomeCientifico" placeholder="Nome cientifico">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descricao" class="form-label">produção média por safra</label>
+                                    <input type="text" class="form-control" id="produçãoMediaSafra" name="produçãoMediaSafra" placeholder="(Kg)">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descricao" class="form-label">Data do plantio</label>
+                                    <input type="text" class="form-control" id="dataPlantio" name="dataPlantio" placeholder="(dd/mm/aaaa)">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Tabela -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">identificador</th>
+                        <th scope="col">nome da espécie</th>
+                        <th scope="col">nome científico</th>
+                        <th scope="col">P.M da safra</th>
+                        <th scope="col">data do plantio</th>
+                    </tr>
+                </thead>
+                <tbody id="tr">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center;" class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+        <p class="text-center text-body-secondary"><img src="./assets/images/dragon-fruit dark.png" height="30px"
+                alt="">© 2025 Company, Inc</p>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script> <!-- jQuery -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap -->
+    <script src="./node_modules/toastify-js/src/toastify.js"></script> <!-- Toastify -->
+    <script src="./src/cardapio.js"></script> <!-- Seu script -->
+
+</body>
+
+</html>
