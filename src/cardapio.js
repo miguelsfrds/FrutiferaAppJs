@@ -17,13 +17,14 @@ function renderTabela() {
 
         card.innerHTML = `
             <div class="card-body">
+                <img src="${item.imagemFrutifera}">
                 <h5 class="card-title">${item.nomeEspecie}</h5>
                 <h6 class="card-subtitle mb-2 text-muted"><i>${item.nomeCientifico}</i></h6>
                 <p class="card-text">
-                    <strong>ID:</strong> ${item.id}<br>
                     Produção média: ${item.produçãoMediaSafra}<br>
                     Data de plantio: ${item.dataPlantio}
                 </p>
+                <strong>ID:</strong> ${item.id}<br>
             </div>
         `;
 
