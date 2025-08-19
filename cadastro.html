@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/images/grao de cafe.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/dragon-fruit.png" type="image/x-icon">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> <!-- CSS do Bootstrap -->
     <link rel="stylesheet" href="./node_modules/toastify-js/src/toastify.css"> <!-- CSS no Toastify -->
     <link rel="stylesheet" href="./assets/css/cadastro.css"> <!-- CSS da página -->
-    <title>Cardápio Calmoa</title>
+    <title>Raízes do Sertão</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                         </li>
                         <!--Cardápio-->
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true"  href="./cadastro.html">Cardápio</a>
+                            <a class="nav-link disabled" aria-disabled="true"  href="./cadastro.html">Cadastro</a>
                         </li>
                     </ul>
                 </div>
@@ -89,20 +89,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Tabela -->
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">identificador</th>
-                        <th scope="col">nome da espécie</th>
-                        <th scope="col">nome científico</th>
-                        <th scope="col">P.M da safra</th>
-                        <th scope="col">data do plantio</th>
-                    </tr>
-                </thead>
-                <tbody id="tr">
-                </tbody>
-            </table>
+            <!-- Cards-->
+            <div id="cards-container" class="d-flex flex-wrap"></div>
         </div>
     </main>
     <footer style="position: fixed; bottom: 0; width: 100%; text-align: center;" class="py-3 my-4">
