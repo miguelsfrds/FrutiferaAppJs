@@ -1,6 +1,14 @@
 // Carrega do LocalStorage
 let itensCardapio = JSON.parse(localStorage.getItem("itens")) || [];
 
+function CalcPlantio(dataPlantio){
+    let plantio = new Date(dataPlantio); // Converte a data de plantio para um objeto Date
+    let hoje = new Date(); // Data atual
+    let meses = (hoje.getFullYear() - plantio.getFullYear()) * 12 + (hoje.getMonth() - plantio.getMonth()) // Calcula a diferença total em meses (considerando anos e meses)
+    if (hoje.getDate() < plantio.getDate()) meses--; // Ajusta caso o "dia do mês" de hoje ainda não tenha chegado (ou seja, mês atual ainda não completou o ciclo)
+    return meses >= 0 ? meses : 0; // Garante que o retorno nunca seja negativo (caso a data seja futura)
+}
+
 function renderTabela() {
     let container = document.querySelector("#cards-container");
     container.innerHTML = ""; // limpa antes de renderizar de novo
@@ -14,7 +22,7 @@ function renderTabela() {
         let card = document.createElement("div");
         card.className = "card m-2";
         card.style.width = "18rem";
-
+        //Montando os cards com as informações passadas pelo usuário
         card.innerHTML = `
             <div class="card-body">
                 <img src="${item.imagemFrutifera}">
@@ -22,7 +30,8 @@ function renderTabela() {
                 <h6 class="card-subtitle mb-2 text-muted"><i>${item.nomeCientifico}</i></h6>
                 <p class="card-text">
                     Produção média: ${item.produçãoMediaSafra}<br>
-                    Data de plantio: ${item.dataPlantio}
+                    Data de plantio: ${item.dataPlantio}<br>
+                    <strong>Idade:</strong> ${CalcPlantio(item.dataPlantio)} mês(es)
                 </p>
                 <strong>ID:</strong> ${item.id}<br>
             </div>
@@ -34,7 +43,6 @@ function renderTabela() {
     // salvar itens no localStorage
     localStorage.setItem("itens", JSON.stringify(itensCardapio));
 }
-
 
 // Evento submit
 let handleSubmit = (event) => {
